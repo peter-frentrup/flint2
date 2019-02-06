@@ -16,7 +16,7 @@
 #ifndef GMP_COMPAT_H
 #define GMP_COMPAT_H
 
-#if (defined(__MINGW64__) || defined(__mips64)) && !defined(__MPIR_VERSION)
+#if (defined(__MINGW64__) || defined(_WIN64) || defined(__mips64)) && (!defined(__MPIR_VERSION) || __MPIR_VERSION >= 3)
 
 #define FLINT_MOCK_MPZ_UI(xxx, yyy) \
    __mpz_struct (xxx)[1] = {{ 1, 0, NULL }}; \
