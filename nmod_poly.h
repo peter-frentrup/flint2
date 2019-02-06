@@ -387,7 +387,7 @@ int nmod_poly_print(const nmod_poly_t a)
     r = flint_printf("%wd %wu", a->length, a->mod.n);
 
     if (a->length == 0)
-        return r;
+        return (int) r;
     else
         if (r > 0)
             r = flint_printf(" ");

@@ -488,7 +488,7 @@ MA 02110-1301, USA. */
 static __inline__
 void flint_mpf_set_si (mpf_ptr dest, slong val)
 {
-  mp_size_t size;
+  int size;
   mp_limb_t vl;
 
   vl = (mp_limb_t) (val >= 0 ? val : -val);
@@ -526,7 +526,7 @@ MA 02110-1301, USA. */
 static __inline__
 void flint_mpf_set_ui(mpf_ptr f, ulong val)
 {
-  mp_size_t size;
+  int size;
 
   f->_mp_d[0] = val;
   size = val != 0;
@@ -732,7 +732,7 @@ double flint_mpf_get_d_2exp(slong * exp2, mpf_srcptr src)
 {
   mp_size_t size, abs_size;
   mp_limb_t * ptr;
-  int cnt;
+  mp_limb_t cnt;
   slong exp;
 
   size = src->_mp_size;
