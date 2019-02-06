@@ -20,7 +20,7 @@ mp_limb_t n_randint(flint_rand_t state, mp_limb_t limit)
     else return n_randlimb(state) % limit;
 }
 
-mp_limb_t n_urandint(flint_rand_t state, const mp_limb_t limit) 
+mp_limb_t n_urandint(flint_rand_t state, mp_limb_t limit) 
 {
     if ((limit & (limit - 1)) == 0)
     {
