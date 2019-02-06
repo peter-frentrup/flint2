@@ -5,7 +5,7 @@
 
 #include "gettimeofday.h"
 
-int gettimeofday(struct timeval *tv, struct timezone *tz)
+FLINT_DLL int gettimeofday(struct timeval *tv, struct timezone *tz)
 {
     FILETIME        ft;
     LARGE_INTEGER   li;
